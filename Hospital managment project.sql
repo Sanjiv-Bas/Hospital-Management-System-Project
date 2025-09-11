@@ -252,3 +252,66 @@ INSERT INTO MedicalRecords VALUES ('R023','P023','Anemia','Iron tablets','2023-0
 INSERT INTO MedicalRecords VALUES ('R024','P024','Back Pain','Physiotherapy','2023-09-24');
 INSERT INTO MedicalRecords VALUES ('R025','P025','Hypertension','Regular checkups','2023-09-25');
 
+-- Get all patient details.
+select * from patients;
+
+-- List names and specialities of all doctors.
+select name,speciality from doctors;
+
+-- Find patients older than 50 years.
+select * 
+from patients
+where age > 50;
+
+-- Show male patients only.
+select * 
+from patients
+where gender = "Male";
+
+-- Get all appointments scheduled (IDs only).
+select appointment_id
+from appointments;
+
+-- Find all prescriptions with dosage “2 times a day”.
+select prescription_id,dosage
+from prescription;
+
+-- List all unpaid bills.
+select *
+from billing
+where payment_status = "Unpaid";
+
+-- Get the total number of doctors in the hospital.
+select count(doctor_id) as TotalDoctors
+from doctors;
+
+-- Show the top 5 most recent medical records.
+select record_id, patient_id,record_date
+from medicalrecords
+order by record_date desc
+limit 5;
+
+-- Find patients living in a particular city (say "New York").
+select * 
+from patients
+where address = "New York";
+
+-- Get doctor details in the "Cardiology" department.
+select *
+from doctors
+where department = "Cardiology";
+
+-- Find patients who have contact numbers starting with “98”.
+select * 
+from patients
+where contact like "98%";
+
+-- Get total billing amount collected so far.
+select sum(amount) as BillingAmount
+from billing;
+
+-- Show all prescription notes given by doctor "D001".
+select prescription_id, notes
+from prescription
+where doctor_id = "D001";
+
