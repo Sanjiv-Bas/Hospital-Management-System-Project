@@ -315,3 +315,53 @@ select prescription_id, notes
 from prescription
 where doctor_id = "D001";
 
+-- Get all patients where gender is 'Male'
+select * 
+from patients
+where gender = "male";
+
+-- show details of doctors who work in the 'Cardiology' department.alter
+select *
+from doctors
+where speciality = "Cardiology";
+
+-- Find patients whose age is between 30 and 50
+select *
+from patients
+where age between 30 and 50;
+
+-- List doctors whose speciality is in ('Cardiology','Orthopedics','Neurology').
+select *
+from doctors
+where speciality in ('Cardiology','Orthopedics','Neurology');
+
+-- Get patients whose name starts with 'A'.
+select *
+from patients
+where name like "A%";
+
+-- Find doctors whose contact number ends with '55'.
+select *
+from patients
+where contact like "%55";
+
+-- Display appointments with status 'Confirmed'.
+select * 
+from appointment
+where status = "Confirmed";
+
+-- Get all patients who do not live in 'Chennai'
+select *
+from patients
+where address != "Chennai";
+
+-- Find billing records where payment_status is 'Unpaid'.
+select *
+from billing
+where payment_status = "Unpaid";
+
+-- Show prescriptions where notes contain the word 'after meals'.
+select * 
+from prescription
+where notes = "After meals";
+
