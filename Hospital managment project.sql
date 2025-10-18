@@ -1,6 +1,5 @@
 Create database hospital_management;
 use hospital_management;
-select * from doctors;
 
 CREATE TABLE patients (
     patient_id VARCHAR(10) PRIMARY KEY,
