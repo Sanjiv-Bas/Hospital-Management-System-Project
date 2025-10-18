@@ -389,3 +389,6 @@ select doctors.doctor_id, doctors.doctor_name, COUNT(DISTINCT Appointments.patie
 from doctors
 inner join appointments on doctors.doctor_id = appointments.doctor_id
 group by doctors.doctor_id, doctors.doctor_name;
+
+-- Appointment Summary
+-- Scenario: Find all upcoming appointments for a specific doctor (e.g., “Dr. Meena”) in the next 7 days.
