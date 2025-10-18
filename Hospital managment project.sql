@@ -384,3 +384,8 @@ select * from insurance;
 
 -- 1. Patient & Doctor Insights
 -- Scenario: The hospital admin wants to know how many patients each doctor has treated.
+
+select doctors.doctor_id, doctors.doctor_name, COUNT(DISTINCT Appointments.patient_id) as Patients_Treated
+from doctors
+inner join appointments on doctors.doctor_id = appointments.doctor_id
+group by doctors.doctor_id, doctors.doctor_name;
