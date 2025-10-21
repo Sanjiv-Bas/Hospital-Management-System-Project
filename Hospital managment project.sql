@@ -1,5 +1,5 @@
-Create database hospital_management;
 use hospital_management;
+select * from doctors;
 
 CREATE TABLE patients (
     patient_id VARCHAR(10) PRIMARY KEY,
@@ -66,7 +66,8 @@ INSERT INTO patients VALUES
 ('P054', 'Vidya', 24, 'Female', 'Trichy', '9827534567'),
 ('P055', 'Santhosh', 29, 'Male', 'Salem', '9838545678');
 
-CREATE TABLE doctors_table (
+CREATE TABLE doctors
+(
     doctor_id VARCHAR(10),
     doctor_name VARCHAR(100),
     degree VARCHAR(50),
@@ -75,53 +76,53 @@ CREATE TABLE doctors_table (
     doctor_contact_number VARCHAR(15)
 );
 
-INSERT INTO doctors_table VALUES ('D001','Sanjiv','MBBS, MD','Cardiologist','Cardiology','9876543210');
-INSERT INTO doctors_table VALUES ('D002','Divya','MBBS, DGO','Neurologist','Neurology','9845012345');
-INSERT INTO doctors_table VALUES ('D003','Karthik Raj','MBBS, MS','Orthopedic Surgeon','Orthopedics','9876023456');
-INSERT INTO doctors_table VALUES ('D004','Divya Shree','MBBS, DNB','Dermatologist','Dermatology','9847034567');
-INSERT INTO doctors_table VALUES ('D005','Vignesh Ram','MBBS, M.Ch','Pediatrician','Pediatrics','9878045678');
-INSERT INTO doctors_table VALUES ('D006','Meena Devi','MBBS, MD','Gynecologist','Gynecology','9849056789');
-INSERT INTO doctors_table VALUES ('D007','Ravi Chandran','MBBS, MS','ENT Specialist','ENT','9880067890');
-INSERT INTO doctors_table VALUES ('D008','Kavya Priya','BDS, MDS','Ophthalmologist','Ophthalmology','9811078901');
-INSERT INTO doctors_table VALUES ('D009','Sathish Kumar','MBBS, MD','Psychiatrist','Psychiatry','9822089012');
-INSERT INTO doctors_table VALUES ('D010','Lakshmi Narayanan','MBBS, MD','Oncologist','Oncology','9833090123');
-INSERT INTO doctors_table VALUES ('D011','Manoj Babu','MBBS, MD','Urologist','Urology','9844101234');
-INSERT INTO doctors_table VALUES ('D012','Swetha Rani','MBBS, MD','Nephrologist','Nephrology','9855112345');
-INSERT INTO doctors_table VALUES ('D013','Surya Prakash','BAMS','Endocrinologist','Endocrinology','9866123456');
-INSERT INTO doctors_table VALUES ('D014','Anitha Devi','BHMS','Pulmonologist','Pulmonology','9877134567');
-INSERT INTO doctors_table VALUES ('D015','Gowtham Raj','MBBS, MD','Gastroenterologist','Gastroenterology','9888145678');
-INSERT INTO doctors_table VALUES ('D016','Sandhya Moorthy','MBBS, DNB','Radiologist','Radiology','9899156789');
-INSERT INTO doctors_table VALUES ('D017','Rajesh Kumar','BPT','Pathologist','Pathology','9810167890');
-INSERT INTO doctors_table VALUES ('D018','Harini Devi','Pharm.D','Anesthesiologist','Anesthesiology','9821178901');
-INSERT INTO doctors_table VALUES ('D019','Naveen Kumar','MBBS, MD','General Surgeon','Surgery','9832189012');
-INSERT INTO doctors_table VALUES ('D020','Keerthana Sri','MBBS, MS','Plastic Surgeon','Plastic Surgery','9843190123');
-INSERT INTO doctors_table VALUES ('D021','Balaji Raman','B.Sc Nursing','Dentist','Dentistry','9854201234');
-INSERT INTO doctors_table VALUES ('D022','Revathi Priya','MBBS, MD','Diabetologist','Diabetology','9865212345');
-INSERT INTO doctors_table VALUES ('D023','Arjun Dev','MBBS, MD','Hematologist','Hematology','9876223456');
-INSERT INTO doctors_table VALUES ('D024','Deepa Latha','MBBS, MD','Infectious Disease Specialist','Infectious Diseases','9887234567');
-INSERT INTO doctors_table VALUES ('D025','Suresh Babu','MBBS, DGO','Rheumatologist','Rheumatology','9898245678');
-INSERT INTO doctors_table VALUES ('D026','Gayathri Devi','MBBS, MS','Allergist','Allergy Department','9819256789');
-INSERT INTO doctors_table VALUES ('D027','Dinesh Kumar','MBBS, MD','Immunologist','Immunology','9820267890');
-INSERT INTO doctors_table VALUES ('D028','Anjali Raj','MBBS, MD','Geriatric Specialist','Geriatrics','9831278901');
-INSERT INTO doctors_table VALUES ('D029','Mohan Ram','BDS','Neonatologist','Neonatology','9842289012');
-INSERT INTO doctors_table VALUES ('D030','Janani Devi','MBBS, DNB','Sports Medicine Specialist','Sports Medicine','9853290123');
-INSERT INTO doctors_table VALUES ('D031','Vijay Anand','BPT','Critical Care Specialist','Critical Care','9864301234');
-INSERT INTO doctors_table VALUES ('D032','Shruthi Bala','MBBS, MD','Emergency Physician','Emergency Medicine','9875312345');
-INSERT INTO doctors_table VALUES ('D033','Prakash Raj','BAMS','Occupational Therapist','Occupational Therapy','9886323456');
-INSERT INTO doctors_table VALUES ('D034','Nandhini Devi','MBBS, MS','Speech Therapist','Speech Therapy','9897334567');
-INSERT INTO doctors_table VALUES ('D035','Kiran Kumar','MBBS, MD','Physiotherapist','Physiotherapy','9818345678');
-INSERT INTO doctors_table VALUES ('D036','Sneha Latha','MBBS, M.Ch','Radiation Oncologist','Oncology','9829356789');
-INSERT INTO doctors_table VALUES ('D037','Saravanan R','MBBS, MD','Microbiologist','Microbiology','9830367890');
-INSERT INTO doctors_table VALUES ('D038','Bhavya Devi','MBBS, MD','Public Health Specialist','Community Medicine','9841378901');
-INSERT INTO doctors_table VALUES ('D039','Muthu Krishnan','BDS, MDS','Forensic Specialist','Forensic Medicine','9852389012');
-INSERT INTO doctors_table VALUES ('D040','Pavithra Raj','MBBS, MD','Veterinarian','Animal Health','9863390123');
-INSERT INTO doctors_table VALUES ('D041','Hari Narayanan','MBBS, MD','Family Physician','Family Medicine','9874401234');
-INSERT INTO doctors_table VALUES ('D042','Latha Priya','MBBS, MS','Nutritionist','Dietetics','9885412345');
-INSERT INTO doctors_table VALUES ('D043','Ashwin Kumar','MBBS, DNB','Sleep Disorder Specialist','Sleep Medicine','9896423456');
-INSERT INTO doctors_table VALUES ('D044','Monika Devi','MBBS, MD','Osteopath','Osteopathy','9817434567');
-INSERT INTO doctors_table VALUES ('D045','Kumar Raj','BSc Nursing','Rehabilitation Specialist','Rehabilitation','9828445678');
-INSERT INTO doctors_table VALUES ('D046','Ramya Sri','Pharm.D','Neuro Surgeon','Neurosurgery','9839456789');
-
+INSERT INTO doctors VALUES ('D001','Sanjiv','MBBS, MD','Cardiologist','Cardiology','9876543210');
+INSERT INTO doctors VALUES ('D002','Divya','MBBS, DGO','Neurologist','Neurology','9845012345');
+INSERT INTO doctors VALUES ('D003','Karthik Raj','MBBS, MS','Orthopedic Surgeon','Orthopedics','9876023456');
+INSERT INTO doctors VALUES ('D004','Divya Shree','MBBS, DNB','Dermatologist','Dermatology','9847034567');
+INSERT INTO doctors VALUES ('D005','Vignesh Ram','MBBS, M.Ch','Pediatrician','Pediatrics','9878045678');
+INSERT INTO doctors VALUES ('D006','Meena Devi','MBBS, MD','Gynecologist','Gynecology','9849056789');
+INSERT INTO doctors VALUES ('D007','Ravi Chandran','MBBS, MS','ENT Specialist','ENT','9880067890');
+INSERT INTO doctors VALUES ('D008','Kavya Priya','BDS, MDS','Ophthalmologist','Ophthalmology','9811078901');
+INSERT INTO doctors VALUES ('D009','Sathish Kumar','MBBS, MD','Psychiatrist','Psychiatry','9822089012');
+INSERT INTO doctors VALUES ('D010','Lakshmi Narayanan','MBBS, MD','Oncologist','Oncology','9833090123');
+INSERT INTO doctors VALUES ('D011','Manoj Babu','MBBS, MD','Urologist','Urology','9844101234');
+INSERT INTO doctors VALUES ('D012','Swetha Rani','MBBS, MD','Nephrologist','Nephrology','9855112345');
+INSERT INTO doctors VALUES ('D013','Surya Prakash','BAMS','Endocrinologist','Endocrinology','9866123456');
+INSERT INTO doctors VALUES ('D014','Anitha Devi','BHMS','Pulmonologist','Pulmonology','9877134567');
+INSERT INTO doctors VALUES ('D015','Gowtham Raj','MBBS, MD','Gastroenterologist','Gastroenterology','9888145678');
+INSERT INTO doctors VALUES ('D016','Sandhya Moorthy','MBBS, DNB','Radiologist','Radiology','9899156789');
+INSERT INTO doctors VALUES ('D017','Rajesh Kumar','BPT','Pathologist','Pathology','9810167890');
+INSERT INTO doctors VALUES ('D018','Harini Devi','Pharm.D','Anesthesiologist','Anesthesiology','9821178901');
+INSERT INTO doctors VALUES ('D019','Naveen Kumar','MBBS, MD','General Surgeon','Surgery','9832189012');
+INSERT INTO doctors VALUES ('D020','Keerthana Sri','MBBS, MS','Plastic Surgeon','Plastic Surgery','9843190123');
+INSERT INTO doctors VALUES ('D021','Balaji Raman','B.Sc Nursing','Dentist','Dentistry','9854201234');
+INSERT INTO doctors VALUES ('D022','Revathi Priya','MBBS, MD','Diabetologist','Diabetology','9865212345');
+INSERT INTO doctors VALUES ('D023','Arjun Dev','MBBS, MD','Hematologist','Hematology','9876223456');
+INSERT INTO doctors VALUES ('D024','Deepa Latha','MBBS, MD','Infectious Disease Specialist','Infectious Diseases','9887234567');
+INSERT INTO doctors VALUES ('D025','Suresh Babu','MBBS, DGO','Rheumatologist','Rheumatology','9898245678');
+INSERT INTO doctors VALUES ('D026','Gayathri Devi','MBBS, MS','Allergist','Allergy Department','9819256789');
+INSERT INTO doctors VALUES ('D027','Dinesh Kumar','MBBS, MD','Immunologist','Immunology','9820267890');
+INSERT INTO doctors VALUES ('D028','Anjali Raj','MBBS, MD','Geriatric Specialist','Geriatrics','9831278901');
+INSERT INTO doctors VALUES ('D029','Mohan Ram','BDS','Neonatologist','Neonatology','9842289012');
+INSERT INTO doctors VALUES ('D030','Janani Devi','MBBS, DNB','Sports Medicine Specialist','Sports Medicine','9853290123');
+INSERT INTO doctors VALUES ('D031','Vijay Anand','BPT','Critical Care Specialist','Critical Care','9864301234');
+INSERT INTO doctors VALUES ('D032','Shruthi Bala','MBBS, MD','Emergency Physician','Emergency Medicine','9875312345');
+INSERT INTO doctors VALUES ('D033','Prakash Raj','BAMS','Occupational Therapist','Occupational Therapy','9886323456');
+INSERT INTO doctors VALUES ('D034','Nandhini Devi','MBBS, MS','Speech Therapist','Speech Therapy','9897334567');
+INSERT INTO doctors VALUES ('D035','Kiran Kumar','MBBS, MD','Physiotherapist','Physiotherapy','9818345678');
+INSERT INTO doctors VALUES ('D036','Sneha Latha','MBBS, M.Ch','Radiation Oncologist','Oncology','9829356789');
+INSERT INTO doctors VALUES ('D037','Saravanan R','MBBS, MD','Microbiologist','Microbiology','9830367890');
+INSERT INTO doctors VALUES ('D038','Bhavya Devi','MBBS, MD','Public Health Specialist','Community Medicine','9841378901');
+INSERT INTO doctors VALUES ('D039','Muthu Krishnan','BDS, MDS','Forensic Specialist','Forensic Medicine','9852389012');
+INSERT INTO doctors VALUES ('D040','Pavithra Raj','MBBS, MD','Veterinarian','Animal Health','9863390123');
+INSERT INTO doctors VALUES ('D041','Hari Narayanan','MBBS, MD','Family Physician','Family Medicine','9874401234');
+INSERT INTO doctors VALUES ('D042','Latha Priya','MBBS, MS','Nutritionist','Dietetics','9885412345');
+INSERT INTO doctors VALUES ('D043','Ashwin Kumar','MBBS, DNB','Sleep Disorder Specialist','Sleep Medicine','9896423456');
+INSERT INTO doctors VALUES ('D044','Monika Devi','MBBS, MD','Osteopath','Osteopathy','9817434567');
+INSERT INTO doctors VALUES ('D045','Kumar Raj','BSc Nursing','Rehabilitation Specialist','Rehabilitation','9828445678');
+INSERT INTO doctors VALUES ('D046','Ramya Sri','Pharm.D','Neuro Surgeon','Neurosurgery','9839456789');
+select * from doctors;
 Create table appointments
 (
 appointment_id varchar(50) primary key,
@@ -380,9 +381,58 @@ INSERT INTO insurance VALUES ('INS050', 'Medicare', 'Inactive');
 INSERT INTO insurance VALUES ('INS051', 'Medicaid', 'Active');
 INSERT INTO insurance VALUES ('INS052', 'Tricare', 'Inactive');
 INSERT INTO insurance VALUES ('INS053', 'BCBS', 'Active');
-select * from insurance;
 
--- 1. Patient & Doctor Insights
+UPDATE insurance SET patient_id = 'P004' WHERE insurance_id = 'INS001';
+UPDATE insurance SET patient_id = 'P005' WHERE insurance_id = 'INS002';
+UPDATE insurance SET patient_id = 'P006' WHERE insurance_id = 'INS003';
+UPDATE insurance SET patient_id = 'P007' WHERE insurance_id = 'INS004';
+UPDATE insurance SET patient_id = 'P008' WHERE insurance_id = 'INS005';
+UPDATE insurance SET patient_id = 'P009' WHERE insurance_id = 'INS006';
+UPDATE insurance SET patient_id = 'P010' WHERE insurance_id = 'INS007';
+UPDATE insurance SET patient_id = 'P011' WHERE insurance_id = 'INS008';
+UPDATE insurance SET patient_id = 'P012' WHERE insurance_id = 'INS009';
+UPDATE insurance SET patient_id = 'P013' WHERE insurance_id = 'INS010';
+UPDATE insurance SET patient_id = 'P014' WHERE insurance_id = 'INS011';
+UPDATE insurance SET patient_id = 'P015' WHERE insurance_id = 'INS012';
+UPDATE insurance SET patient_id = 'P016' WHERE insurance_id = 'INS013';
+UPDATE insurance SET patient_id = 'P017' WHERE insurance_id = 'INS014';
+UPDATE insurance SET patient_id = 'P018' WHERE insurance_id = 'INS015';
+UPDATE insurance SET patient_id = 'P019' WHERE insurance_id = 'INS016';
+UPDATE insurance SET patient_id = 'P020' WHERE insurance_id = 'INS017';
+UPDATE insurance SET patient_id = 'P021' WHERE insurance_id = 'INS018';
+UPDATE insurance SET patient_id = 'P022' WHERE insurance_id = 'INS019';
+UPDATE insurance SET patient_id = 'P023' WHERE insurance_id = 'INS020';
+UPDATE insurance SET patient_id = 'P024' WHERE insurance_id = 'INS021';
+UPDATE insurance SET patient_id = 'P025' WHERE insurance_id = 'INS022';
+UPDATE insurance SET patient_id = 'P026' WHERE insurance_id = 'INS023';
+UPDATE insurance SET patient_id = 'P027' WHERE insurance_id = 'INS024';
+UPDATE insurance SET patient_id = 'P028' WHERE insurance_id = 'INS025';
+UPDATE insurance SET patient_id = 'P029' WHERE insurance_id = 'INS026';
+UPDATE insurance SET patient_id = 'P030' WHERE insurance_id = 'INS027';
+UPDATE insurance SET patient_id = 'P031' WHERE insurance_id = 'INS028';
+UPDATE insurance SET patient_id = 'P032' WHERE insurance_id = 'INS029';
+UPDATE insurance SET patient_id = 'P033' WHERE insurance_id = 'INS030';
+UPDATE insurance SET patient_id = 'P034' WHERE insurance_id = 'INS031';
+UPDATE insurance SET patient_id = 'P035' WHERE insurance_id = 'INS032';
+UPDATE insurance SET patient_id = 'P036' WHERE insurance_id = 'INS033';
+UPDATE insurance SET patient_id = 'P037' WHERE insurance_id = 'INS034';
+UPDATE insurance SET patient_id = 'P038' WHERE insurance_id = 'INS035';
+UPDATE insurance SET patient_id = 'P039' WHERE insurance_id = 'INS036';
+UPDATE insurance SET patient_id = 'P040' WHERE insurance_id = 'INS037';
+UPDATE insurance SET patient_id = 'P041' WHERE insurance_id = 'INS038';
+UPDATE insurance SET patient_id = 'P042' WHERE insurance_id = 'INS039';
+UPDATE insurance SET patient_id = 'P043' WHERE insurance_id = 'INS040';
+UPDATE insurance SET patient_id = 'P044' WHERE insurance_id = 'INS041';
+UPDATE insurance SET patient_id = 'P045' WHERE insurance_id = 'INS042';
+UPDATE insurance SET patient_id = 'P046' WHERE insurance_id = 'INS043';
+UPDATE insurance SET patient_id = 'P047' WHERE insurance_id = 'INS044';
+UPDATE insurance SET patient_id = 'P048' WHERE insurance_id = 'INS045';
+UPDATE insurance SET patient_id = 'P049' WHERE insurance_id = 'INS046';
+UPDATE insurance SET patient_id = 'P050' WHERE insurance_id = 'INS047';
+UPDATE insurance SET patient_id = 'P051' WHERE insurance_id = 'INS048';
+UPDATE insurance SET patient_id = 'P052' WHERE insurance_id = 'INS049';
+
+--  Patient & Doctor Insights
 -- Scenario: The hospital admin wants to know how many patients each doctor has treated.
 
 select doctors.doctor_id, doctors.doctor_name, COUNT(DISTINCT Appointments.patient_id) as Patients_Treated
@@ -392,3 +442,70 @@ group by doctors.doctor_id, doctors.doctor_name;
 
 -- Appointment Summary
 -- Scenario: Find all upcoming appointments for a specific doctor (e.g., “Dr. Meena”) in the next 7 days.
+select appointments.appointment_id, appointments.patient_id, appointments.appointment_date,appointments.appointment_status
+from appointments
+inner join doctors on doctors.doctor_id =  appointments.doctor_id
+where doctors.doctor_name = "divya" 
+and appointments.appointment_date >= CURDATE()
+and appointments.appointment_date <= DATE_ADD(CURDATE(), INTERVAL 7 DAY);
+
+-- Billing & Payment Insights
+-- Scenario: Management wants to see total billing amount collected per day.
+
+SELECT Date, SUM(Amount) AS Total_Billing_Amount
+FROM Billing
+GROUP BY Date;
+
+-- Prescription Analysis
+-- Scenario: Find all medications prescribed by doctors from the “Cardiology” department.
+select doctors.doctor_name, doctors.doctor_speciality,prescription.medication
+from doctors
+inner join prescription on prescription.doctor_id = doctors.doctor_id
+where doctors.doctor_speciality = "Cardiologist";
+
+-- Insurance Utilization
+-- Scenario: List patients whose insurance eligibility is “Approved” but billing payment status is still “Pending”
+select patients.patient_name, insurance.insurance_name, insurance.insurance_status,billing.payment_status
+from patients
+inner join insurance on patients.patient_id = insurance.patient_id
+inner join billing on patients.patient_id = billing.patient_id
+where insurance.insurance_status = "Active"and billing.payment_status = "Pending";
+
+-- Doctor Performance Report
+-- Scenario: Show total number of prescriptions issued and total billing generated per doctor.
+select count(prescription_id) as issued_prescriptions, doctors.doctor_name
+from prescription
+inner join doctors on doctors.doctor_id  = prescription.doctor_id
+group by doctors.doctor_name;
+
+-- Missing Insurance Records
+-- Scenario: Find all patients who don’t have an insurance record in the insurance table.
+select patients.patient_name, insurance.patient_id 
+from patients
+inner join insurance on insurance.patient_id = patients.patient_id
+where insurance.patient_id is NULL;
+
+-- Appointment-to-Billing Link Check
+-- Scenario: Verify that every appointment has a corresponding billing entry.
+SELECT appointments.appointment_id, billing.bill_id
+FROM appointments
+INNER JOIN billing ON billing.patient_id = appointments.patient_id;
+
+-- Monthly Revenue Trend
+-- Scenario: Show monthly revenue trend for the current year.
+SELECT MONTH(Date) AS month,SUM(Amount) AS total_revenue
+FROM billing
+WHERE YEAR(Date) = YEAR(CURDATE())AND payment_status = 'Paid'
+GROUP BY MONTH(Date)
+ORDER BY MONTH(Date);
+
+-- Scenario: Doctor Performance Insights
+-- Find the top 3 doctors who have completed the highest number of appointments in the last 90 days, along with their department and total revenue generated from those appointments
+SELECT doctors.doctor_id, doctors.doctor_name, doctors.doctor_department, COUNT(appointments.appointment_id) AS completed_appointments, SUM(billing.amount) AS total_revenue
+FROM appointments
+INNER JOIN doctors ON appointments.doctor_id = doctors.doctor_id
+INNER JOIN billing ON billing.patient_id = appointments.patient_id
+WHERE appointment_status = 'Completed' AND appointment_date >= CURDATE() - INTERVAL 90 DAY
+GROUP BY doctors.doctor_id, doctors.doctor_name, doctors.doctor_department
+ORDER BY completed_appointments DESC
+LIMIT 3;
