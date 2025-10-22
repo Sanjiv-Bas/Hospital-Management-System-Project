@@ -68,7 +68,7 @@ INSERT INTO patients VALUES
 
 CREATE TABLE doctors
 (
-    doctor_id VARCHAR(10),
+    doctor_id VARCHAR(10) PRIMARY KEY,
     doctor_name VARCHAR(100),
     degree VARCHAR(50),
     doctor_speciality VARCHAR(100),
