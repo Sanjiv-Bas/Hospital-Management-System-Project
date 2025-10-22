@@ -509,3 +509,35 @@ WHERE appointment_status = 'Completed' AND appointment_date >= CURDATE() - INTER
 GROUP BY doctors.doctor_id, doctors.doctor_name, doctors.doctor_department
 ORDER BY completed_appointments DESC
 LIMIT 3;
+
+-- Scenario: Create a Comprehensive Patient Report View
+-- As a senior MySQL developer, you are asked to create a view called patient_full_report that combines key details from all six tables — showing each patient’s name, gender, doctor name, appointment date, medication, total billing amount, and insurance eligibility.
+DROP VIEW IF EXISTS patient_full_report;
+CREATE VIEW patient_full_report AS
+SELECT patients.patient_name, patients.patient_gender, doctors.doctor_name, appointments.appointment_date, prescription.medication,  SUM(billing.amount) AS total_billing_amount, insurance.insurance_status
+FROM patients
+INNER JOIN appointments ON patients.patient_id = appointments.patient_id
+INNER JOIN doctors ON appointments.doctor_id = doctors.doctor_id
+LEFT JOIN prescription ON patients.patient_id = prescription.patient_id  AND doctors.doctor_id = prescription.doctor_id
+LEFT JOIN billing ON patients.patient_id = billing.patient_id
+LEFT JOIN insurance ON patients.patient_id = insurance.patient_id
+GROUP BY patients.patient_id, patients.patient_name, patients.patient_gender,
+  doctors.doctor_name, appointments.appointment_date, prescription.medication, insurance.insurance_status;
+SELECT *
+FROM patient_full_report
+WHERE insurance_status = 'Active'and total_billing_amount > 2500;
+
+-- Scenario: Generate Patient Billing Summary
+-- Write a stored procedure called GetPatientBillingSummary that takes a patient ID as input and returns:
+DELIMITER //
+CREATE PROCEDURE GetPatientBillingSummary(IN in_patient_id INT)
+BEGIN
+    SELECT patients.patient_id, patients.patient_name, patients.patient_age, patients.patient_gender, patients.patient_address, patients.patient_mobile_number, billing.billing_id,billing.amount, billing.payment_date,
+    billing.billing, insurance.insurance_id, insurance.insurance_name, insurance.insurance_status, appointments.appointment_id, appointments.appointment_date, appointments.appointment_status
+	FROM patients
+    LEFT JOIN billing ON patients.patient_id = billing.patient_id
+    LEFT JOIN insurance ON patients.patient_id = insurance.patient_id
+    LEFT JOIN appointments ON patients.patient_id = appointments.patient_id
+    WHERE patients.patient_id = in_patient_id;
+END //
+DELIMITER ;
