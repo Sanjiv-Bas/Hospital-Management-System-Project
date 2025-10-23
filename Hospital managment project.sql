@@ -123,6 +123,61 @@ INSERT INTO doctors VALUES ('D044','Monika Devi','MBBS, MD','Osteopath','Osteopa
 INSERT INTO doctors VALUES ('D045','Kumar Raj','BSc Nursing','Rehabilitation Specialist','Rehabilitation','9828445678');
 INSERT INTO doctors VALUES ('D046','Ramya Sri','Pharm.D','Neuro Surgeon','Neurosurgery','9839456789');
 
+alter table doctors
+add column patient_id varchar(50) after doctor_id;
+set SQL_SAFE_UPDATES = 1;
+
+ALTER TABLE doctors
+ADD CONSTRAINT fk_patient_id
+FOREIGN KEY (patient_id) REFERENCES patients(patient_id);
+
+update doctors set patient_id = 'P004' where doctor_id = 'D001';
+update doctors set patient_id = 'P005' where doctor_id = 'D002';
+update doctors set patient_id = 'P006' where doctor_id = 'D003';
+update doctors set patient_id = 'P007' where doctor_id = 'D004';
+update doctors set patient_id = 'P008' where doctor_id = 'D005';
+update doctors set patient_id = 'P009' where doctor_id = 'D006';
+update doctors set patient_id = 'P010' where doctor_id = 'D007';
+update doctors set patient_id = 'P011' where doctor_id = 'D008';
+update doctors set patient_id = 'P012' where doctor_id = 'D009';
+update doctors set patient_id = 'P013' where doctor_id = 'D010';
+update doctors set patient_id = 'P014' where doctor_id = 'D011';
+update doctors set patient_id = 'P015' where doctor_id = 'D012';
+update doctors set patient_id = 'P016' where doctor_id = 'D013';
+update doctors set patient_id = 'P017' where doctor_id = 'D014';
+update doctors set patient_id = 'P018' where doctor_id = 'D015';
+update doctors set patient_id = 'P019' where doctor_id = 'D016';
+update doctors set patient_id = 'P020' where doctor_id = 'D017';
+update doctors set patient_id = 'P021' where doctor_id = 'D018';
+update doctors set patient_id = 'P022' where doctor_id = 'D019';
+update doctors set patient_id = 'P023' where doctor_id = 'D020';
+update doctors set patient_id = 'P024' where doctor_id = 'D021';
+update doctors set patient_id = 'P025' where doctor_id = 'D022';
+update doctors set patient_id = 'P026' where doctor_id = 'D023';
+update doctors set patient_id = 'P027' where doctor_id = 'D024';
+update doctors set patient_id = 'P028' where doctor_id = 'D025';
+update doctors set patient_id = 'P029' where doctor_id = 'D026';
+update doctors set patient_id = 'P030' where doctor_id = 'D027';
+update doctors set patient_id = 'P031' where doctor_id = 'D028';
+update doctors set patient_id = 'P032' where doctor_id = 'D029';
+update doctors set patient_id = 'P033' where doctor_id = 'D030';
+update doctors set patient_id = 'P034' where doctor_id = 'D031';
+update doctors set patient_id = 'P035' where doctor_id = 'D032';
+update doctors set patient_id = 'P036' where doctor_id = 'D033';
+update doctors set patient_id = 'P037' where doctor_id = 'D034';
+update doctors set patient_id = 'P038' where doctor_id = 'D035';
+update doctors set patient_id = 'P039' where doctor_id = 'D036';
+update doctors set patient_id = 'P040' where doctor_id = 'D037';
+update doctors set patient_id = 'P041' where doctor_id = 'D038';
+update doctors set patient_id = 'P042' where doctor_id = 'D039';
+update doctors set patient_id = 'P043' where doctor_id = 'D040';
+update doctors set patient_id = 'P044' where doctor_id = 'D041';
+update doctors set patient_id = 'P045' where doctor_id = 'D042';
+update doctors set patient_id = 'P046' where doctor_id = 'D043';
+update doctors set patient_id = 'P047' where doctor_id = 'D044';
+update doctors set patient_id = 'P048' where doctor_id = 'D045';
+update doctors set patient_id = 'P049' where doctor_id = 'D046';
+
 select * from doctors;
 Create table appointments
 (
@@ -542,3 +597,42 @@ BEGIN
     WHERE patients.patient_id = in_patient_id;
 END //
 DELIMITER ;
+
+-- To connect all the columns and get it in a single sheet, the below query was coded.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+select patients.patient_id,
+ patients.patient_name, patients.patient_age, patients.patient_gender, 
+ patients.patient_address, patients.patient_mobile_number,
+doctors.doctor_id ,doctors. doctor_name, doctors.degree , doctors.doctor_speciality, 
+doctors.doctor_department ,doctors.doctor_contact_number,
+appointments.appointment_id, appointments. appointment_date, appointments.appointment_status,
+insurance.insurance_id, insurance.insurance_name, insurance.insurance_status,
+billing. bill_id, billing.amount, billing.payment_status, billing.date,
+prescription.prescription_id, prescription. medication,prescription. dosage, prescription.notes
+from patients
+inner join doctors on doctors.patient_id = patients.patient_id
+inner join appointments on appointments.doctor_id = doctors.doctor_id
+inner join insurance on insurance.patient_id = patients.patient_id
+inner join billing on billing.patient_id =patients.patient_id
+inner join prescription on prescription.patient_id = patients.patient_id;
+
+-- View
+~~~~~~~~
+create view hospital as 
+select patients.patient_id,
+ patients.patient_name, patients.patient_age, patients.patient_gender, 
+ patients.patient_address, patients.patient_mobile_number,
+doctors.doctor_id ,doctors. doctor_name, doctors.degree , doctors.doctor_speciality, 
+doctors.doctor_department ,doctors.doctor_contact_number,
+appointments.appointment_id, appointments. appointment_date, appointments.appointment_status,
+insurance.insurance_id, insurance.insurance_name, insurance.insurance_status,
+billing. bill_id, billing.amount, billing.payment_status, billing.date,
+prescription.prescription_id, prescription. medication,prescription. dosage, prescription.notes
+from patients
+inner join doctors on doctors.patient_id = patients.patient_id
+inner join appointments on appointments.doctor_id = doctors.doctor_id
+inner join insurance on insurance.patient_id = patients.patient_id
+inner join billing on billing.patient_id =patients.patient_id
+inner join prescription on prescription.patient_id = patients.patient_id;
+
+select * from hospital;
