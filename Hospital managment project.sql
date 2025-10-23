@@ -69,7 +69,7 @@ INSERT INTO patients VALUES
 CREATE TABLE doctors
 (
     doctor_id VARCHAR(10) PRIMARY KEY,
-    doctor_name VARCHAR(100),
+	doctor_name VARCHAR(100),
     degree VARCHAR(50),
     doctor_speciality VARCHAR(100),
     doctor_department VARCHAR(100),
@@ -122,6 +122,7 @@ INSERT INTO doctors VALUES ('D043','Ashwin Kumar','MBBS, DNB','Sleep Disorder Sp
 INSERT INTO doctors VALUES ('D044','Monika Devi','MBBS, MD','Osteopath','Osteopathy','9817434567');
 INSERT INTO doctors VALUES ('D045','Kumar Raj','BSc Nursing','Rehabilitation Specialist','Rehabilitation','9828445678');
 INSERT INTO doctors VALUES ('D046','Ramya Sri','Pharm.D','Neuro Surgeon','Neurosurgery','9839456789');
+
 select * from doctors;
 Create table appointments
 (
